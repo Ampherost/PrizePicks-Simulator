@@ -75,7 +75,7 @@ float Simulator::powerOdds() const {
 
 float Simulator::calculatePower() const {
     if (numPicks == 2) {
-        if (determineWin) {
+        if (determineWin()) {
             return bettingAmount * 3;
         }
         else {
@@ -83,7 +83,7 @@ float Simulator::calculatePower() const {
         }
     }
     else if (numPicks ==3) {
-        if (determineWin) {
+        if (determineWin()) {
             return bettingAmount * 5;
         }
         else {
@@ -91,7 +91,7 @@ float Simulator::calculatePower() const {
         }
     }
     else if (numPicks == 4) {
-        if (determineWin) {
+        if (determineWin()) {
             return bettingAmount * 10;
         }
         else {
@@ -99,7 +99,7 @@ float Simulator::calculatePower() const {
         }
     }
     else if (numPicks == 5) {
-        if (determineWin) {
+        if (determineWin()) {
             return bettingAmount * 20;
         }
         else {
@@ -107,18 +107,21 @@ float Simulator::calculatePower() const {
         }
     }
     else if (numPicks == 6) {
-        if (determineWin) {
+        if (determineWin()) {
             return bettingAmount * 37.5;
         }
         else {
             return 0;
         }
     }
+    else {
+        return 0;
+    }
 }
 
-float Simulator::calculateFlex() const {
+// float Simulator::calculateFlex() const {
     
-}
+// }
 
 bool Simulator::determineWin() const {
     float lineupHitOdds = powerOdds();

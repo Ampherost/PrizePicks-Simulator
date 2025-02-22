@@ -24,7 +24,7 @@ int main() {
     simulator.setNumPicks(numPicks);
     simulator.setsinglehitOdds(0.6);
 
-    cout << "You have Won: " << simulator.calculatePower() << " Congratulations" << endl;
+    cout << "You have Won: " << simulator.calculatePower() << "Dollars, Congratulations" << endl;
 
 
 
